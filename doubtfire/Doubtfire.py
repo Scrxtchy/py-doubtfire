@@ -58,7 +58,7 @@ class Task:
 class api:
 	tt = requests.session()
 	def __init__(self, username, password):
-		login = api.tt.post('https://doubtfire.ict.swin.edu.au/api/auth', params={'username': username, 'password': password, 'remeber': True}).json()
+		login = api.tt.post('https://doubtfire.ict.swin.edu.au/api/auth', params={'username': username, 'password': password, 'remember': True}).json()
 		try:
 			api.tt.params.update({'auth_token': login['auth_token']})
 		except KeyError:
