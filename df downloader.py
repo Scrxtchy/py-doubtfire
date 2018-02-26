@@ -31,6 +31,6 @@ for course in df.courses:
 			makedirs(getcwd() + '\\' + str(course.unit_code))
 		for task in course.tasks:
 			if task.has_task_pdf is True:
-				DownloadFile('https://doubtfire.ict.swin.edu.au/api/units/{0}/task_definitions/{1}/task_pdf.json'.format(df.courses[0].unit_id, task.id), '\\{0}\\{1}.pdf'.format(course.unit_code, task.abbreviation))
+				DownloadFile('https://doubtfire.ict.swin.edu.au/api/units/{0}/task_definitions/{1}/task_pdf.json'.format(course.unit_id, task.id), '\\{0}\\{1}.pdf'.format(course.unit_code, task.abbreviation))
 			if task.has_task_resources is True:
-				DownloadFile('https://doubtfire.ict.swin.edu.au/api/units/{0}/task_definitions/{1}/task_resources.json'.format(df.courses[0].unit_id, task.id), '\\{0}\\{1}resources.zip'.format(course.unit_code, task.abbreviation))
+				DownloadFile('https://doubtfire.ict.swin.edu.au/api/units/{0}/task_definitions/{1}/task_resources.json'.format(course.unit_id, task.id), '\\{0}\\{1}resources.zip'.format(course.unit_code, task.abbreviation))
